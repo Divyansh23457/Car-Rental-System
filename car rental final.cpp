@@ -5,8 +5,6 @@
 #include <unistd.h>
 #include <dos.h>
 #include <iomanip> 
-//Brought To You by code-projects.org
-// included required library files
 using namespace std;
 class customer // customer class
 {
@@ -16,22 +14,21 @@ class customer // customer class
     string carmodel;
     string carnumber;
     char data;
-    // variables defined in this class in public mode.
 };
-class rent : public customer // inhereted class from customer class
+class rent : public customer 
 {
 	public:
-	int days=0,rentalfee=0; // additional int vatiables defined
+	int days=0,rentalfee=0; 
 	void data()
 	{
 		int login();
 	login();
-	cout << "\t\t\t\tPlease Enter your Name: "; //taking data from the user
+	cout << "\t\t\t\tPlease Enter your Name: "; 
     cin >> customername;
     cout<<endl;
     do
     {
-        cout <<"\t\t\t\tPlease Select a Car"<<endl; //giving user a choice to select among three different models
+        cout <<"\t\t\t\tPlease Select a Car"<<endl; 
         cout<<"\t\t\t\tEnter 'A' for Tesla 20011."<<endl;
         cout<<"\t\t\t\tEnter 'B' for Hyundai 2015."<<endl;
         cout<<"\t\t\t\tEnter 'C' for Ford 2017."<<endl;
@@ -58,7 +55,7 @@ sleep(2);
   	system("CLS");
   
 		cout<<"You have choosed Hyundai model 2015"<<endl;
-		 ifstream inB("B.txt"); //displaying details of model B
+		 ifstream inB("B.txt"); 
          char str[200];
          while(inB) {
          inB.getline(str, 200);  
@@ -71,7 +68,7 @@ sleep(2);
  {
  	system("CLS");
 	     cout<<"You have choosed Ford model 2017"<<endl;
-		 ifstream inC("C.txt"); //displaying details of model C
+		 ifstream inC("C.txt"); 
          char str[200];
          while(inC) {
          inC.getline(str, 200);  
@@ -86,7 +83,6 @@ if(carmodel !="A" && carmodel !="B" &&  carmodel !="C" )
 while(carmodel !="A" && carmodel !="B" &&  carmodel !="C" );
     cout<<"--------------------------------------------------------------------------"<<endl;
     cout << "Please provide following information: "<<endl; 
-	//getting data from user related to rental service
     cout<<"Please select a Car No. : ";
     cin >> carnumber;
     cout<<"Number of days you wish to rent the car : ";
@@ -146,19 +142,19 @@ void showrent()
   inf.close();
 	}
 };
-class welcome //welcome class
+class welcome
 {
 	public:
 	int welcum()
 	{
- ifstream in("welcome.txt"); //displaying welcome ASCII image text on output screen fn1353
+ ifstream in("welcome.txt"); 
 
   if(!in) {
     cout << "Cannot open input file.\n";
   }
   char str[1000];
   while(in) {
-    in.getline(str, 1000);  // delim defaults to '\n' cp
+    in.getline(str, 1000); 
     if(in) cout << str << endl;
   }
   in.close();
@@ -166,22 +162,20 @@ class welcome //welcome class
   cout<<"\nStarting the program please wait....."<<endl;
   sleep(1);
   cout<<"\nloading up files....."<<endl;
-  sleep(1); //function which waits for (n) seconds
-  system ("CLS"); //cleares screen
+  sleep(1); 
+  system ("CLS");
 }
 
 };
 int main()
 {
-welcome obj1; //object created for welcome class
-obj1.welcum(); //welcum function is called
+welcome obj1;
+obj1.welcum(); 
 rent obj2; 
-//object created for rent class and further member functions are called
 obj2.data();
 obj2.calculate();
 obj2.showrent();
-
-return 0; //end of the program
+return 0; 
 }
 
 int login(){
@@ -193,7 +187,7 @@ int login(){
    cout<<"\t\t\t\t\t------------------------------\n\n";	
    cout << "\t\t\t\t\tEnter Password: ";
    ch = _getch();
-   while(ch != 13){//character 13 is enter
+   while(ch != 13){
       pass.push_back(ch);
       cout << '*';
       ch = _getch();
