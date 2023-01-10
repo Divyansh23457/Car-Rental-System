@@ -6,7 +6,7 @@
 #include <dos.h>
 #include <iomanip> 
 using namespace std;
-class customer // customer class
+class customer 
 {
 	private:
 	public:
