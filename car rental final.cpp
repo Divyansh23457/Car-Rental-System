@@ -42,7 +42,7 @@ class rent : public customer
  	system("CLS");
  
 		cout<<"You have choosed Tesla model 2011"<<endl;
-		 ifstream inA("A.txt"); //displaying details of model A
+		 ifstream inA("A.txt"); 
          char str[200];
          while(inA) {
          inA.getline(str, 200);  
